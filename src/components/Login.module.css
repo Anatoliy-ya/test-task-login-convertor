@@ -1,0 +1,28 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+
+  input {
+    margin: 0.5rem;
+    width: 200px;
+    height: 20px;
+  }
+}
+
+.loginButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}

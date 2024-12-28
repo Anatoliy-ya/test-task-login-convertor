@@ -1,0 +1,33 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-height: 50%;
+}
+
+.getTree {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-height: 600px;
+  padding: 1rem;
+  border: 1px solid white;
+  align-items: center;
+}
+
+.getToken {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-height: 600px;
+  padding: 1rem;
+  border: 1px solid white;
+  align-items: center;
+}

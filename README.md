@@ -1,50 +1,113 @@
-# React + TypeScript + Vite
+# React Test Project: Tree Converter and Mock Login
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
 
-Currently, two official plugins are available:
+Этот проект был создан для демонстрации решений двух тестовых задач:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Конвертация плоской структуры JSON в дерево.
+2. Реализация процесса авторизации с использованием WebSocket-мок-сервера, включая сохранение токена в localStorage.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Реализованные задачи
 
-- Configure the top-level `parserOptions` property like this:
+### 1. Tree Converter
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Пользователь вводит плоскую JSON-структуру, содержащую узлы с `id` и `parentId`.
+- Приложение преобразует данные в древовидную структуру и отображает результат в формате JSON.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Mock Login
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Форма для ввода логина и пароля.
+- Данные отправляются на мок-сервер, который проверяет их корректность.
+- При успешной авторизации токен сохраняется в localStorage.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## Технологии
+
+Проект создан с использованием следующих технологий:
+
+- React 18
+- TypeScript
+- Vite
+- CSS-модули
+
+---
+
+## Запуск проекта
+
+### Локальный запуск
+
+1. Клонируйте репозиторий:
+
+   ```
+   git clone https://github.com/your-repository-url.git
+   ```
+
+2. Перейдите в папку проекта:
+
+   ```
+   cd project-folder
+   ```
+
+3. Установите зависимости:
+
+   ```
+   npm install
+   ```
+
+4. Запустите проект:
+
+   ```
+   npm run dev
+   ```
+
+5. Откройте [http://localhost:5173](http://localhost:5173) в браузере.
+
+---
+
+## Примеры использования
+
+### Tree Converter
+
+1. Введите плоскую JSON-структуру в текстовое поле.  
+   Пример входных данных:
+
+   ```json
+   [
+     { "id": 1, "parentId": 0 },
+     { "id": 2, "parentId": 1 },
+     { "id": 3, "parentId": 1 },
+     { "id": 4, "parentId": 0 },
+     { "id": 5, "parentId": 4 }
+   ]
+   ```
+
+2. Нажмите кнопку "Convert".
+
+3. Результат в виде древовидной структуры появится внизу.
+
+### Mock Login
+
+1. Введите логин и пароль в соответствующие поля.  
+   Пример для успешного входа:
+
+   ```
+   Логин: test
+   Пароль: 1234
+   ```
+
+2. Нажмите "Login".
+
+3. Если логин и пароль корректны, появится сообщение об успешной авторизации, а токен сохранится в localStorage.
+
+---
+
+## Примечания
+
+- Для Tree Converter входные данные должны быть валидным JSON с ключами в кавычках.
+- Для Mock Login мок-сервер обрабатывает только логин `test` и пароль `1234`.
+- Проект создан исключительно в демонстрационных целях.
+
+---

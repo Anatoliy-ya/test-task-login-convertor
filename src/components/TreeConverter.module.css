@@ -1,0 +1,24 @@
+.treeConverter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.convertButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  margin: 0.5rem;
+}
+
+.example {
+  width: 150px;
+  margin: 0.5rem;
+}
